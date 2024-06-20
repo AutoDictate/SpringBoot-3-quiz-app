@@ -1,4 +1,4 @@
-package com.telusko.quizapp.model;
+package com.quizapp.model;
 
 public class Response {
     private Integer id;

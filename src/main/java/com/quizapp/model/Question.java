@@ -1,24 +1,36 @@
-package com.telusko.quizapp.model;
+package com.quizapp.model;
 
-public class QuestionWrapper {
+import jakarta.persistence.*;
 
+@Entity
+@Table
+public class Question {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String questionTitle;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
+    private String rightAnswer;
+    private String difficultylevel;
+    private String category;
 
-    public QuestionWrapper() {
+    public Question() {
     }
 
-    public QuestionWrapper(Integer id, String questionTitle, String option1, String option2, String option3, String option4) {
+    public Question(Integer id, String questionTitle, String option1, String option2, String option3, String option4, String rightAnswer, String difficultylevel, String category) {
         this.id = id;
         this.questionTitle = questionTitle;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
+        this.rightAnswer = rightAnswer;
+        this.difficultylevel = difficultylevel;
+        this.category = category;
     }
 
     public Integer getId() {
@@ -67,5 +79,29 @@ public class QuestionWrapper {
 
     public void setOption4(String option4) {
         this.option4 = option4;
+    }
+
+    public String getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(String rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
+
+    public String getDifficultylevel() {
+        return difficultylevel;
+    }
+
+    public void setDifficultylevel(String difficultylevel) {
+        this.difficultylevel = difficultylevel;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
